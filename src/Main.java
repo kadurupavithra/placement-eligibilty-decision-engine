@@ -1,7 +1,9 @@
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
         String name = scanner.next();
@@ -11,12 +13,9 @@ public class Main {
 
         Candidate candidate = new Candidate(
                 name,
-
                 percentage,
                 backlogs,
-                graduationYear
-
-        );
+                graduationYear);
 
         Job job = new Job(
                 "Infosys",
@@ -24,6 +23,7 @@ public class Main {
                 65.0,
                 0,
                 2026);
+
         boolean percentagePass = candidate.getPercentage() >= job.getMinimumPercentage();
 
         boolean backlogPass = candidate.getBacklogs() <= job.getMaximumBacklogs();
@@ -32,14 +32,14 @@ public class Main {
 
         boolean eligible = percentagePass && backlogPass && yearPass;
 
-        System.out.println("================================");
+        System.out.println("===============================");
         System.out.println("PLACEMENT ELIGIBILITY RESULT");
-        System.out.println("================================");
-        System.out.println();
+        System.out.println("===============================");
 
         System.out.println("Candidate : " + candidate.getName());
-        System.out.println("Company :" + job.getCompany());
-        System.out.println("Role :" + job.getRole());
+        System.out.println("Company : " + job.getCompany());
+        System.out.println("Role : " + job.getRole());
+
         System.out.println();
 
         if (percentagePass) {
@@ -60,15 +60,16 @@ public class Main {
             System.out.println("Graduation Year : FAIL");
         }
 
+        System.out.println();
+
         if (eligible) {
             System.out.println("Final Result : ELIGIBLE");
-
         } else {
-
             System.out.println("Final Result : NOT ELIGIBLE");
-
         }
-        System.out.println("======================================");
+        System.out.println("================================");
+
         scanner.close();
+
     }
 }
